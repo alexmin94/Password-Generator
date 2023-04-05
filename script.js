@@ -35,15 +35,26 @@ function generatePassword() {
 
     num = confirm("Press OK to include numbers in the password");
     if (num) {
-      intendedChars  += "0123456789";
+      intendedChars += "0123456789";
     }
     console.log("intended Characters= ", intendedChars);
 
     if (lower === true || upper === true || num === true || special === true) {
 
+      //  here : all inputs got , all inputs validated to be okay.
+      // So generate password according to user criteria
+      for (let i = 0; i < passLen; i++) {
+        index = Math.floor(Math.random() * intendedChars.length);
+        console.log("index = ", index);
+        randomChar = intendedChars[index];
+        console.log("randomChar = ", randomChar);
+
+        genPassword = genPassword + randomChar;
+      }
+      return genPassword;
     }
     else {
-      alert ("Atleaset one character type should be chosen for password to be  geneerated. Please retry")
+      alert("Atleaset one character type should be chosen for password to be  geneerated. Please retry")
     }
   } else {
     alert("Password length must be a number between 8 and 128 ( both inclusive). Please retry");
