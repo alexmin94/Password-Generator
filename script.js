@@ -16,14 +16,17 @@ function generatePassword() {
   // validate passLen 
   passLen = parseInt(passLen);
   if (!isNaN(passLen) && passLen >=8 && passLen <= 128) {
-    alert( "your chosen passwordLength is = ", passLen);
+    alert( "your chosen passwordLength is = " + passLen);
     
     lower = confirm("Press OK to include lower case characters in the password");
     if (lower) {
       intendedChars  += "abcdefghijklmnopqrstuvwxyz";
     }
-    
+
+  } else {
+    alert("Password length must be a number between 8 and 128 ( both inclusive). Please retry");
   }
+
 }
 // Write password to the #password input
 function writePassword() {
