@@ -39,7 +39,12 @@ function generatePassword() {
     }
     console.log("intended Characters= ", intendedChars);
 
-    if (lower === true || upper === true || num === true || special === true) 
+    if (lower === true || upper === true || num === true || special === true) {
+
+    }
+    else {
+      alert ("Atleaset one character type should be chosen for password to be  geneerated. Please retry")
+    }
   } else {
     alert("Password length must be a number between 8 and 128 ( both inclusive). Please retry");
   }
