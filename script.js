@@ -12,6 +12,18 @@ function generatePassword() {
   let randomChar = '';
 
   passLen = prompt("Enter passlength between 8 - 128");
+
+  // validate passLen 
+  passLen = parseInt(passLen);
+  if (!isNaN(passLen) && passLen >=8 && passLen <= 128) {
+    alert( "your chosen passwordLength is = ", passLen);
+    
+    lower = confirm("Press OK to include lower case characters in the password");
+    if (lower) {
+      intendedChars  += "abcdefghijklmnopqrstuvwxyz";
+    }
+    
+  }
 }
 // Write password to the #password input
 function writePassword() {
