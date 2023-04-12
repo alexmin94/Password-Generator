@@ -4,12 +4,12 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   console.log("generatePassword called because of click on generateBtn");
 
-  let intendedChars = '';
-  let genPassword = ''
-  let passLen = 0;
-  let lower, upper, num, special = false;
-  let index = 0;
-  let randomChar = '';
+  var intendedChars = '';
+  var genPassword = ''
+  var passLen = 0;
+  var lower, upper, num, special = false;
+  var index = 0;
+  var randomChar = '';
 
   passLen = prompt("Enter passlength between 8 - 128");
 
@@ -43,7 +43,7 @@ function generatePassword() {
 
       //  here : all inputs got , all inputs validated to be okay.
       // So generate password according to user criteria
-      for (let i = 0; i < passLen; i++) {
+      for (var i = 0; i < passLen; i++) {
         index = Math.floor(Math.random() * intendedChars.length);
         console.log("index = ", index);
         randomChar = intendedChars[index];
